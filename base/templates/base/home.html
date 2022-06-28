@@ -2,21 +2,23 @@
 
 {% block content %}
     <header>
-        <h2>Contacts</h2>
-        <a href="{% url 'addContact' %}">+ Add contact</a>
+        <div class="top-bar">
+            <h2>Contacts</h2>
+            <a href="{% url 'addContact' %}">+ Add contact</a>
+        </div>
 
         <form action="" method="POST">
             {% csrf_token %}
-            <input type="text" name="q" placeholder="Search for contact by last name...">
+            <input type="text" name="q" placeholder="Search for contact by last name..." id="search">
         </form>
 
         {% for contact in contacts %}
             <div class="contact">
                 <div>
-                    <a href="{% url 'editContact' contact.id %}"><p>{{contact.name}}</p></a>
-                    <p>{{contact.number}}</p>
+                    <a href="{% url 'editContact' contact.id %}" class="name">{{contact.name}}</a>
+                    <div class="number">{{contact.number}}</div>
                 </div>
-                <a href="{% url 'deleteContact' contact.id %}">Delete</a>
+                <a href="{% url 'deleteContact' contact.id %}" class="delete">Delete</a>
             </div>
         {% endfor %}
 
