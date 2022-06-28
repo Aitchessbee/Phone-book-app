@@ -16,5 +16,16 @@ def addContact(request):
             name = request.POST.get("name"),
             number = request.POST.get("number")
         )
+        return redirect('home')
 
     return render(request, 'base/contact.html')
+
+def deleteContact(request, pk):
+    contact = Contact.objects.get(id=pk)
+
+    if request.method == "POST":
+        contact.delete()
+        return redirect('home');
+
+    context = {"contact": contact}
+    return render(request, 'base/delete.html', context)

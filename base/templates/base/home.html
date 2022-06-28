@@ -3,7 +3,7 @@
 {% block content %}
     <header>
         <h2>Contacts</h2>
-        <a href="{% url 'addcontact' %}">+ Add contact</a>
+        <a href="{% url 'addContact' %}">+ Add contact</a>
 
         <form action="" method="POST">
             {% csrf_token %}
@@ -11,9 +11,12 @@
         </form>
 
         {% for contact in contacts %}
-            <div>
-                <p>{{contact.name}}</p>
-                <p>{{contact.number}}</p>
+            <div class="contact">
+                <div>
+                    <p>{{contact.name}}</p>
+                    <p>{{contact.number}}</p>
+                </div>
+                <a href="{% url 'deleteContact' contact.id %}">Delete</a>
             </div>
         {% endfor %}
 

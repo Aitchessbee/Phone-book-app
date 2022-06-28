@@ -1,3 +1,9 @@
 h1 {
     color: red;
 }
+
+.contact {
+    display: flex;
+    align-items: center;
+    color: red;
+}

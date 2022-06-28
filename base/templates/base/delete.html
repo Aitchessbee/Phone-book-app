@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete {{contact.name}} - {{contact.number}}</p>
+            <a href="{% url 'home' %}">Cancel</a>
+            <button>Yes</button>
+        </form>
+    </div>
+
+{% endblock %}
