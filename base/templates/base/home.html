@@ -7,8 +7,7 @@
             <a href="{% url 'addContact' %}">+ Add contact</a>
         </div>
 
-        <form action="" method="POST">
-            {% csrf_token %}
+        <form action="{% url 'home' %}" method="GET">
             <input type="text" name="q" placeholder="Search for contact by last name..." id="search">
         </form>
 

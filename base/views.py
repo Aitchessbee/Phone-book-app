@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Contact
+from django.db.models import Q
 
 
 # Create your views here.
 def home(request):
-    contacts = Contact.objects.all()
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    contacts = Contact.objects.filter(
+        Q(name__icontains=q) |
+        Q(number__icontains=q)
+        )
+    # contacts = Contact.objects.all()
     context = {"contacts": contacts}
 
     return render(request, 'base/home.html', context)
