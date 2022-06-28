@@ -6,10 +6,16 @@
         <a href="{% url 'addcontact' %}">+ Add contact</a>
 
         <form action="" method="POST">
+            {% csrf_token %}
             <input type="text" name="q" placeholder="Search for contact by last name...">
         </form>
 
-        
+        {% for contact in contacts %}
+            <div>
+                <p>{{contact.name}}</p>
+                <p>{{contact.number}}</p>
+            </div>
+        {% endfor %}
 
     </header>
 {% endblock %}
