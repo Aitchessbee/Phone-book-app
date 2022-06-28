@@ -13,7 +13,7 @@ body {
     height: 100vh;
     width: 47%;
     margin: 0 auto;
-    text-align: center;
+    /* text-align: center; */
     background: #f6f6f6;
     padding: 30px;
 }
@@ -22,6 +22,7 @@ body {
     /* display: block; */
     text-decoration: none;
     color: black;
+    text-align: center;
     /* margin-top: 100px; */
 }
 
@@ -52,11 +53,12 @@ body {
     color: white;
     border-radius: 5px;
     padding-top: 8px;
+    text-align: center;
 }
 
 #search {
     width: 100%;
-    height: 30px;
+    height: 40px;
     margin-bottom: 30px;
     padding-left: 20px;
 }
@@ -65,7 +67,7 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 90px;
     background: white;
     padding: 20px;
     justify-content: space-between;
@@ -87,4 +89,49 @@ body {
     text-decoration: none;
     color: red;
     font-size: 27px;
+}
+
+.add_heading {
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 27px;
+}
+
+.input {
+    margin-bottom: 20px;
+}
+
+
+.input label {
+    font-size: 23px;
+    margin-right: 20px;
+}
+
+.input input {
+    height: 35px;
+    width: 300px;
+    font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: red;
+    font-size: 27px;
+}
+
+.buttons button {
+    background-color: #347bf6;
+    color: white;
+    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    cursor: pointer;
 }

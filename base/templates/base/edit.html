@@ -1,19 +1,22 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <div>
-        <form action="" method="POST">
-            {% csrf_token %}
+    <h2 class="add_heading">Edit contact</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input">
             <label for="name">Name</label>
-            <input type="text" name="name" value="{{contact.name}}">
+            <input required type="text" name="name" value="{{contact.name}}">
+        </div>
+        <div class="input">
             <label for="number">Number</label>
-            <input type="text" name="number" value="{{contact.number}}">
+            <input required type="text" name="number" value="{{contact.number}}">
+        </div>
 
-            <a href="{% url 'home' %}">Cancel</a>
-
-            <button type="submit">Add contact</button>
-
-        </form>
-    </div>
+        <div class="buttons">
+            <a href="{% url 'home' %}" id="cancel">Cancel</a>
+            <button type="submit" id="add">Edit contact</button>
+        </div>
+    </form>
 
 {% endblock %}
