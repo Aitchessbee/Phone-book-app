@@ -4,9 +4,15 @@
     <div>
         <form action="" method="POST">
             {% csrf_token %}
-            <p>Are you sure you want to delete {{contact.name}} - {{contact.number}}</p>
-            <a href="{% url 'home' %}">Cancel</a>
-            <button>Yes</button>
+            <h2 class="delete-title">Are you sure you want to delete the following contact?</h2>
+            <div class="contact">
+                <h3>{{contact.name}}</h3>
+                <h3>{{contact.number}}</h3>
+            </div>
+            <div class="buttons">
+                <a href="{% url 'home' %}" class="cancel">Cancel</a>
+                <button class="add">Yes</button>
+            </div>
         </form>
     </div>
 
