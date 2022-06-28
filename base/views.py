@@ -4,4 +4,10 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return render(request, 'main.html')
+    return render(request, 'base/home.html')
+
+def addContact(request):
+    
+
+
+    return render(request, 'base/contact.html')

@@ -9,6 +9,10 @@
     <title>Phone Book App</title>
 </head>
 <body>
-    <h1>Phone book app</h1>
+    <a href="{% url 'home' %}"><h1>Phone book app</h1></a>
+
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>

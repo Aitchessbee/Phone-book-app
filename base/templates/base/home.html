@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <header>
+        <h2>Contacts</h2>
+        <a href="{% url 'addcontact' %}">+ Add contact</a>
+
+        <form action="" method="POST">
+            <input type="text" name="q" placeholder="Search for contact by last name...">
+        </form>
+
+        
+
+    </header>
+{% endblock %}
