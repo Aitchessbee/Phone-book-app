@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{contact.name}}">
+            <label for="number">Number</label>
+            <input type="text" name="number" value="{{contact.number}}">
+
+            <a href="{% url 'home' %}">Cancel</a>
+
+            <button type="submit">Add contact</button>
+
+        </form>
+    </div>
+
+{% endblock %}

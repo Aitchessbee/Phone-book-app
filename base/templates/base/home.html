@@ -13,7 +13,7 @@
         {% for contact in contacts %}
             <div class="contact">
                 <div>
-                    <p>{{contact.name}}</p>
+                    <a href="{% url 'editContact' contact.id %}"><p>{{contact.name}}</p></a>
                     <p>{{contact.number}}</p>
                 </div>
                 <a href="{% url 'deleteContact' contact.id %}">Delete</a>
